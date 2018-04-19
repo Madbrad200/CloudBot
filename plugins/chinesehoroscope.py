@@ -1,4 +1,4 @@
-# Plugin by Infinity - <https://github.com/infinitylabs/UguuBot>
+# Plugin by Madbrad200
 
 import requests
 from bs4 import BeautifulSoup
@@ -8,7 +8,7 @@ from cloudbot import hook
 from cloudbot.util import database
 
 table = Table(
-    'horoscope',
+    'chinesehoroscope',
     database.metadata,
     Column('nick', String, primary_key=True),
     Column('sign', String)
@@ -32,7 +32,7 @@ def set_sign(db, nick, sign):
 
 
 @hook.command(autohelp=False)
-def horoscope(text, db, bot, nick, notice, notice_doc, reply, message):
+def chinesehoroscope(text, db, bot, nick, notice, notice_doc, reply, message):
     """[sign] - get your horoscope"""
     signs = {
         'ox': '1',
